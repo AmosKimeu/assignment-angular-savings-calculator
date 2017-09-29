@@ -1,0 +1,31 @@
+<h3> Saving Calculator </h3>
+<p>
+    Starting amount: <input [(ngModel)]="amount" type="number" placeholder="amount" />
+</p>
+<p>
+    Rate of return (percent): <input [(ngModel)]="percent" type="number" placeholder="percent" />
+</p>
+<p>
+    Years: <input [(ngModel)]="years" type="number" placeholder="year" />
+</p>
+<button type="button" (click)="calculateSavings()"> Calculate</button>
+<button type="button" (click)="clearSavings()">Reset</button>
+<br/> <br/>
+<table *ngIf="!clearTable">
+    <tr>
+        <th>Month</th>
+        <th> Interest</th>
+        <th>Balance</th>
+    </tr>
+    <tr *ngFor="let result of results">
+        <td>
+            {{result.interest}}
+        </td>
+        <td>
+            {{result.interest}}
+        </td>
+        <td>
+            {{result.balance}}
+        </td>
+    </tr>
+</table>
